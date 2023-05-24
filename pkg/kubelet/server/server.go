@@ -835,7 +835,6 @@ func (s *Server) getExecUrl(request *restful.Request, response *restful.Response
 	pod, ok := s.host.GetPodByName(params.podNamespace, params.podName)
 	if !ok {
 		response.WriteError(http.StatusNotFound, fmt.Errorf("pod does not exist"))
-		// return
 		return nil, fmt.Errorf("pod not found")
 	}
 
